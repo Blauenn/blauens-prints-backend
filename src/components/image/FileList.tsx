@@ -1,4 +1,5 @@
 import { importFiles } from "#/functions/image/create";
+import { stripEnhanced } from "#/functions/string/filenameStrip";
 import type { ImportItem } from "#/types/create/importItem";
 import type { Dispatch, RefObject, SetStateAction } from "react";
 
@@ -77,7 +78,7 @@ export default function FileList({
                   selectedIndex === index ? "bg-gray-300" : "hover:bg-gray-300"
                 }`}
               >
-                {item.file.name}
+                {stripEnhanced(item.file.name)}
               </button>
             ))}
           </div>
